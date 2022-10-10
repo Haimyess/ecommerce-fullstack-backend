@@ -3,7 +3,8 @@
 //Requiring the express node.js package to create the server
 const express = require("express");
 
-const products_router = require("./productsRoutes.js");
+const products_router = require("../backend/routes/productsRoutes.js");
+// const order_router = require("../backend/routes/orders.js");
 
 // Creating the server
 const app = express();
@@ -22,5 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/api/products", products_router);
+// app.use("/api/order", order_router);
 
 // app.use(express.static(__dirname + "/public"));

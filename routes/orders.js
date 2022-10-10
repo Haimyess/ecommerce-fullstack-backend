@@ -2,9 +2,9 @@
 
 const express = require("express");
 const router = express.Router();
-const { _getAllProducts } = require("./productsControlers.js");
+const { _newPurchase } = require("../ controlers/orders.js");
 
 // To All products
-router.get("/all", _getAllProducts);
+router.post("/", _newPurchase);
 
 module.exports = router;
