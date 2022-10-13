@@ -23,7 +23,8 @@ const getCategory = (product_category) => {
       // "product_category",
       // "product_subcategories"
     )
-    .where({ product_category: product_category });
+    .where({ product_category: product_category })
+    .orderBy("product_name");
 };
 
 // Getting a product
@@ -39,9 +40,17 @@ const getProduct = (product_id) => {
     .where({ product_id: product_id });
 };
 
+// Search products
+const searchProducts = (query) => {
+  return database("products")
+    .select("*")
+    .whereILike("product_name", `${query}%`);
+};
+
 // Exporting the function getAllPRoduct that gets the products of our ecommerce website
 module.exports = {
   getAllProducts,
   getCategory,
   getProduct,
+  searchProducts,
 };

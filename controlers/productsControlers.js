@@ -5,6 +5,7 @@ const {
   getAllProducts,
   getCategory,
   getProduct,
+  searchProducts,
 } = require("../models/productsModel.js");
 
 //Get request to READ all of the pordcuts. Could be update, delete, etc (CRUD)
@@ -38,9 +39,23 @@ const _getCategory = (req, res) => {
     .catch((err) => {
       res.json({ msg: err.message });
     });
+
+  // Search
+};
+const _searchProducts = (req, res) => {
+  console.log(req.query.q);
+  // changed here
+  searchProducts(req.query.q)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json({ msg: err.message });
+    });
 };
 module.exports = {
   _getAllProducts,
   _getCategory,
   _getProduct,
+  _searchProducts,
 };

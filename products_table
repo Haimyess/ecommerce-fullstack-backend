@@ -13,10 +13,10 @@ CREATE TABLE products (
 
 INSERT INTO products (product_name, product_category, product_subcategory, product_type, product_description, product_price, product_image, product_brand)
 VALUES 
-('Basmati Rice',  'Grains', 'Basmati', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 10, 'https://pixabay.com/images/id-563796', 'Pakistani Night'),
-('Whole Rice',  'Grains', 'Whole', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 8, 'https://pixabay.com/images/id-563796', 'Osem'),
-('Persian Rice',  'Grains', 'Persian', 'Rice', 'Fluffy and light, this long grained rice is named after the tropical basmati blossom of South East Asia.', 9, 'https://pixabay.com/images/id-563796', 'Teheran');
+('Red Quinoa',  'Grains', 'Red', 'Quinoa', 'Best red quinoa in the market!', 12, 'https://images.unsplash.com/photo-1586201375799-47cd24c3f595?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80', 'Pakistani Night');
 
-
+UPDATE products
+SET product_image = 'https://live.staticflickr.com/65535/52402145785_d63f8cb8d8_b.jpg" width="1024" height="683" alt="red-rice'
+WHERE product_id = 3;
 
 SELECT * FROM products;
