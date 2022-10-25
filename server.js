@@ -22,7 +22,10 @@ app.listen(process.env.PORT || 3001, () => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/api/products", products_router);
+app.use(
+  "https://ecommerce-fullstack-backend.herokuapp.com/api/products",
+  products_router
+);
 // app.use("/api/order", order_router);
 
 app.use(express.static(__dirname + "/public"));
