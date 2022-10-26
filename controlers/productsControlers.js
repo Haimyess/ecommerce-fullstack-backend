@@ -6,7 +6,7 @@ const {
   getCategory,
   getProduct,
   searchProducts,
-} = require("../models/productsModel.js");
+} = require("../models/productsmodel.js");
 
 //Get request to READ all of the pordcuts. Could be update, delete, etc (CRUD)
 const _getAllProducts = (req, res) => {
