@@ -3,7 +3,7 @@
 //Requiring the express node.js package to create the server
 const express = require("express");
 
-const products_router = require("../backend/routes/productsRoutes.js");
+const products_router = require("./routes/productsroutes.js");
 // const order_router = require("../backend/routes/orders.js");
 
 // Creating the server
