@@ -15,9 +15,18 @@ const addUser = (user) => {
 };
 
 const checkUser = (user) => {
+  const { user_email, user_password } = user;
   console.log(user); //email and password that we typed
 
-  return database("users");
+  // We want to check if this user is in the database
+
+  // if (user)
+  return database("users")
+    .where({
+      user_email,
+      user_password,
+    })
+    .select("*");
 };
 
 // Exporting the functions
