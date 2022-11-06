@@ -4,7 +4,8 @@
 const express = require("express");
 
 const products_router = require("./routes/productsroutes.js");
-// const order_router = require("../backend/routes/orders.js");
+const order_router = require("./routes/orders.js");
+const users_router = require("./routes/users.js");
 
 // Creating the server
 const app = express();
@@ -15,7 +16,7 @@ dotenv.config();
 const cors = require("cors");
 app.use(cors());
 // Listenting to the port 5000 in localhost
-app.listen(process.env.PORT || 3001, () => {
+app.listen(process.env.PORT || 3005, () => {
   console.log(`listen on port ${process.env.PORT}`);
 });
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/products", products_router);
 
-// app.use("/api/order", order_router);
+app.use("/api/order", order_router);
+app.use("/", users_router);
 
 app.use(express.static(__dirname + "/public"));
