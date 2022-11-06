@@ -14,10 +14,17 @@ const addUser = (user) => {
   return database("users").insert(user).returning("*");
 };
 
+const checkUser = (user) => {
+  console.log(user); //email and password that we typed
+
+  return database("users");
+};
+
 // Exporting the functions
 module.exports = {
   getAllUsers,
   addUser,
+  checkUser,
 };
 
 // app.get("/", (res, req) => {

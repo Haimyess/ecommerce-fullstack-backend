@@ -35,9 +35,9 @@
 
 /** @format */
 // Requiring the the function getAllProducts located in the modules folder, to get all the products of the website
-const { getAllUsers, addUser } = require("../models/users.js");
+const { getAllUsers, addUser, checkUser } = require("../models/users.js");
 
-//Getting all users
+//Getting all users - TESTING PURPOSES
 const _getAllUsers = (req, res) => {
   getAllUsers()
     .then((data) => {
@@ -62,7 +62,22 @@ const _addUser = (req, res) => {
     });
 };
 
+const _checkUser = (req, res) => {
+  console.log(req.body);
+  checkUser(req.body)
+    .then((data) => {
+      res.json(data);
+
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json({ msg: err.message });
+    });
+};
+
 module.exports = {
   _getAllUsers,
   _addUser,
+  _checkUser,
 };
