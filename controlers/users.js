@@ -63,7 +63,7 @@ const _addUser = (req, res) => {
 };
 
 const _checkUser = (req, res) => {
-  console.log(req.body);
+  // console.log(req.body.user_email);
   checkUser(req.body)
     .then((data) => {
       res.json(data);

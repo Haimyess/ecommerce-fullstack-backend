@@ -21,12 +21,10 @@ const checkUser = (user) => {
   // We want to check if this user is in the database
 
   // if (user)
-  return database("users")
-    .where({
-      user_email,
-      user_password,
-    })
-    .select("*");
+  return database("users").select("*").where({
+    user_email: user_email,
+    user_password: user_password,
+  });
 };
 
 // Exporting the functions
