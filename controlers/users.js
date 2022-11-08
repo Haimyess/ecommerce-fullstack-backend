@@ -68,7 +68,9 @@ const _checkUser = (req, res) => {
     .then((data) => {
       res.json(data);
 
-      console.log(res);
+      // if()
+
+      console.log(req.body);
     })
     .catch((err) => {
       console.log(err);
