@@ -13,6 +13,7 @@ router.get("/", _getAllUsers);
 
 // Adding users
 router.post("/signup", _addUser);
+// Logging in if the user exists
 router.post("/", _checkUser);
 
 module.exports = router;

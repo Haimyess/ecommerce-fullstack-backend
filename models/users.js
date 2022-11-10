@@ -14,16 +14,15 @@ const addUser = (user) => {
   return database("users").insert(user).returning("*");
 };
 
-const checkUser = (user) => {
-  const { user_email, user_password } = user;
-  console.log(user); //email and password that we typed
+const checkUser = (email) => {
+  // const { user_email, user_password } = user;
+  // console.log(user); //email and password that we typed
 
   // We want to check if this user is in the database
 
   // if (user)
   return database("users").select("*").where({
-    user_email: user_email,
-    user_password: user_password,
+    user_email: email,
   });
 };
 
