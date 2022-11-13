@@ -32,15 +32,25 @@ const _addUser = (req, res) => {
 const _checkUser = (req, res) => {
   checkUser(req.body.user_email) //email --> model
     .then((data) => {
+      console.log(data);
       if (data[0].user_password === req.body.user_password) {
         res.json(data);
       } else {
-        res.status(401).json({ msg: "incorrect password" });
+        res.status(401).json({ errMsg: "incorrect email or  password" });
+        // res.status(401).json({ msgPass: "incorrect password" });
       }
+
+      //   if (data[0].user_email === req.body.user_email) {
+      //     res.json(data);
+      //   } else {
+      //     res.status(401).json({ notexist: "User not exist" });
+      //   }
     })
     .catch((err) => {
       console.log(err);
-      res.json({ msg: err.message, notexist: "User not exist" });
+      // res.json({ notexist: "User not exist" });
+      // res.json({ msg: err.message });
+      res.json({ errMsg: "incorrect email or  password" });
     });
 };
 

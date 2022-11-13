@@ -23,6 +23,7 @@ const checkUser = (email) => {
   // if (user)
   return database("users").select("*").where({
     user_email: email,
+    // user_password: user_password,
   });
 };
 
